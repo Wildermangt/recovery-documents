@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recovery Documents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Recovery Documents</h1>
+      <p class="subtitle">Consulta cuántos documentos fueron entregados en un rango de fechas.</p>
+
+      <form method="post" class="card">
+        <label for="fecha_inicio">Fecha inicio</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" required value="{{ fecha_inicio }}" />
+
+        <label for="fecha_fin">Fecha fin</label>
+        <input type="date" id="fecha_fin" name="fecha_fin" required value="{{ fecha_fin }}" />
+
+        <button type="submit">Consultar</button>
+      </form>
+
+      {% if error %}
+        <p class="error">{{ error }}</p>
+      {% endif %}
+
+      {% if resultado is not none %}
+        <section class="result">
+          <h2>Resultado</h2>
+          <p>Documentos entregados: <strong>{{ resultado }}</strong></p>
+        </section>
+      {% endif %}
+    </main>
+  </body>
+</html>
