@@ -1,0 +1,17 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# --- Base de datos generada ---
+# app.py la crea y la siembra en el primer arranque.
+recovery_documents.db
+*.sqlite3
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
